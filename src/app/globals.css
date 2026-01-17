@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* ربط المتغيرات بـ Tailwind عشان تقدر تستخدم bg-background */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  color-scheme: light;
+}
+
+/* تعديل طريقة تعريف الـ dark variant لضمان استجابتها لكلاس .dark */
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
+}
+
+/* تنسيق الـ Placeholder */
+.tiptap .is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* تغيير لون الـ Placeholder في الدارك مود */
+.dark .tiptap .is-editor-empty:first-child::before {
+  color: #4b5563;
+}
+
+body {
+  /* الآن الـ body سيتغير لونه أوتوماتيكياً لأن قيم المتغيرات تتبدل */
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* لضمان أن أي عنصر يستخدم bg-background يتأثر بالدارك مود */
+@layer base {
+  *, ::after, ::before {
+    border-color: var(--foreground, currentColor);
+  }
+}
