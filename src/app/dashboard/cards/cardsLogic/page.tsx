@@ -1,5 +1,5 @@
 'use client';
-import { useTasks } from "@/app/tasks/tasksLogic/page";
+import { useTasks } from "@/app/tasks/tasksLogic/taskContext/page";
 import { usePomodoro } from "@/app/pomodoro/pomodoroBox/PomodoroBoxLogic/page";
 import { useFocus } from "@/app/focusMode/focusPage/focusModeLogic/page";
 import { useHabit } from "@/app/habitTracker/habitTrackerLogic/habitsStore/page";

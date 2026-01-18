@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
-import { useTasks } from '../../tasksLogic/page';
+import { useTasks } from "../../tasksLogic/taskContext/page"
 
 const FilterByCategoryPage = () => {
     const {
@@ -16,9 +16,7 @@ const FilterByCategoryPage = () => {
     }, [tasks]);
 
     return (
-        /* التعديل: إزالة mx-7 واستخدام px-4 لضمان عدم خروج المحتوى، وتقليل الهوامش الرأسية للموبايل */
         <div className="mt-6 mb-8 px-4 md:px-7">
-            {/* التعديل: استخدام grid في الموبايل (2 أعمدة) و flex في الشاشات الأكبر */}
             <div className="grid grid-cols-2 md:flex md:flex-row gap-3 md:gap-4 justify-center">
 
                 <button

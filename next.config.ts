@@ -4,8 +4,16 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   experimental: {
     useCache: true,
-    // 👇 زود اللي جاي ده
-
+  },
+  // أضف قسم الـ redirects هنا
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/dashboard",
+        permanent: true, // true تعني تحويل دائم (أفضل للـ SEO)
+      },
+    ];
   },
 };
 

@@ -24,12 +24,12 @@ export const TasksProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [category, setCategory] = useState("Personal");
     const [isTaskChecked, setIsTaskChecked] = useState<boolean>(false);
     const [settingsClick, setSettingsClick] = useState<boolean>(false);
-    const [editingTaskId, setEditingTaskId] = useState<string | null>(null); // ⭐ أضفنا state للتعديل
+    const [editingTaskId, setEditingTaskId] = useState<string | null>(null); 
     const [showTasks, setShowTasks] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
         try {
             const stored = localStorage.getItem("showTasks");
-            return stored ? JSON.parse(stored) : true; // default true
+            return stored ? JSON.parse(stored) : true; 
         } catch {
             return true;
         }

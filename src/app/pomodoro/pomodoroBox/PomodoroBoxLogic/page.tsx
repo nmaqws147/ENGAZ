@@ -21,29 +21,31 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
   });
 
   const [sessionsCompleted, setSessionsCompleted] = useState(() => {
-    const savedSessions = localStorage.getItem("sessionsCompleted");
-    const savedDate = localStorage.getItem("sessionsDate");
-    if (savedSessions && savedDate === today) return Number(savedSessions);
-    return 0; 
+    if (typeof window !== 'undefined') {
+      const savedDate = localStorage.getItem("sessionsDate");
+      if (savedDate === today) {
+        return Number(localStorage.getItem("sessionsCompleted")) || 0;
+      }
+    }
+    return 0;
   });
+
 
   const [mode,setMode] = useState<TimerMode>('pomodoro');
 
-  const [pomodoroSettingsShortBreak, setPomodoroSettingsShortBreak] = useState(() => {
-    if (typeof window !== 'undefined') return Number(localStorage.getItem('shortBreak')) || 5;
-    return 5;
-  });
+  const [pomodoroSettingsShortBreak, setPomodoroSettingsShortBreak] = useState(5);
 
-  const [pomodoroSettingsLongBreak, setPomodoroSettingsLongBreak] = useState(() => {
-    if (typeof window !== 'undefined') return Number(localStorage.getItem('longBreak')) || 15;
-    return 15;
-  });
+  const [pomodoroSettingsLongBreak, setPomodoroSettingsLongBreak] = useState(15);
+  
 
   const [longBreakTime, setLongBreakTime] = useState(() => {
-    const savedLongBreak = localStorage.getItem("longBreakTime");
-    const savedDate = localStorage.getItem("sessionsDate");
-    if (savedLongBreak && savedDate === today) return Number(savedLongBreak);
-    return 8; 
+    if (typeof window !== 'undefined') {
+      const savedDate = localStorage.getItem("sessionsDate");
+      if (savedDate === today) {
+        return Number(localStorage.getItem("longBreakTime")) || 4;
+      }
+    }
+    return 4;
   });
 
   const [pomodoroStart, setPomodoroStart] = useState(false);
@@ -75,8 +77,21 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => { localStorage.setItem('shortBreak', pomodoroSettingsShortBreak.toString()); }, [pomodoroSettingsShortBreak]);
   useEffect(() => { localStorage.setItem('longBreak', pomodoroSettingsLongBreak.toString()); }, [pomodoroSettingsLongBreak]);
   useEffect(() => { localStorage.setItem('currentSeconds', totalSeconds.toString()); }, [totalSeconds]);
-  useEffect(() => { localStorage.setItem("sessionsCompleted", sessionsCompleted.toString()); localStorage.setItem("sessionsDate", today); }, [sessionsCompleted, today]);
-  useEffect(() => { localStorage.setItem("longBreakTime", longBreakTime.toString()); localStorage.setItem("sessionsDate",today); }, [longBreakTime,today]);
+  
+  useEffect(() => {
+    const savedDate = localStorage.getItem("sessionsDate");
+    if (savedDate !== today) {
+      setSessionsCompleted(0);
+      setLongBreakTime(4);
+      localStorage.setItem("sessionsDate", today);
+      localStorage.setItem("sessionsCompleted", "0");
+      localStorage.setItem("longBreakTime", "4");
+    } else {
+      localStorage.setItem("sessionsCompleted", sessionsCompleted.toString());
+      localStorage.setItem("longBreakTime", longBreakTime.toString());
+    }
+  }, [sessionsCompleted, longBreakTime]);
+
   useEffect(() => { pomodoroSound.current = new Audio("sounds/bell-notification-337658.mp3"); }, [pomodoroSettingsTimer]);
 
     const startSession = () => {
@@ -112,7 +127,10 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
     const elapsed = Math.floor((Date.now() - (startTimeRef.current || Date.now())) / 1000);
     const remaining = (currentInitial * 60) - elapsed;
 
+    if (remaining >= 0) setTotalSeconds(remaining);
+
     if (remaining <= 0) {
+        setTotalSeconds(remaining);
         pomodoroSound.current?.play();
         if (pomodoroTimer.current) clearInterval(pomodoroTimer.current);
         setPomodoroStart(false); 
@@ -128,12 +146,12 @@ export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
   const dayIndex = prev.findIndex(item => item.date === currentToday);
 
   if (dayIndex !== -1) {
-    const updated = [...prev]; // بنعمل نسخة (By Value) من المصفوفة
+    const updated = [...prev]; 
     const currentVal = updated[dayIndex].sessions || 0; 
     
     updated[dayIndex] = { 
       ...updated[dayIndex], 
-      sessions: currentVal + 1 // بنزود على القيمة اللي موجودة جوه المصفوفة حالياً
+      sessions: currentVal + 1 
     };
     return updated;
   } else {

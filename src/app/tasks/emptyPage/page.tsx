@@ -1,11 +1,10 @@
 'use client'
-import { useTasks } from "../tasksLogic/page";
+import { useTasks } from "../tasksLogic/taskContext/page"
 
 const EmptyPage = () => {
     const { setShowPopup, setShowTasks, tasks} = useTasks();
     
     return tasks.length === 0 ? (
-        /* التعديل: إزالة ml-9 و mt-9 واستبدالها بـ mx-auto مع padding مناسب للموبايل */
         <div className="flex flex-col mt-6 md:mt-9 px-4 w-full">
             <div className="w-full max-w-4xl mx-auto">
                 <div className="flex flex-col items-center justify-center py-12 md:py-16 px-6 rounded-2xl shadow-sm border dark:border-gray-800 border-gray-100 bg-white dark:bg-gray-900 transition-colors">
@@ -70,7 +69,6 @@ const EmptyPage = () => {
             </div>
         </div>
     ) : (
-        /* التعديل: الزر العائم (Fixed) جعلناه يتمركز في أسفل اليمين في الموبايل لتسهيل اللمس */
         <button
             className="fixed z-50 bottom-6 right-6 md:bottom-auto md:top-10 md:right-10 text-sm md:text-md px-5 py-3 md:px-6 md:py-3 cursor-pointer bg-linear-to-r from-emerald-500 to-emerald-600 text-white rounded-lg shadow-2xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 active:scale-95"
             onClick={() => { setShowPopup(prev => !prev); setShowTasks(prev => !prev); }}

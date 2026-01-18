@@ -5,7 +5,7 @@ import TheMostImportantTasks from "./TheMostImportantTasks/page";
 import ProductiveOverView from "./weeklyProductivityOverViewChart/page";
 
 const Dashboard = () => {
-  console.log("Dashboard is rendering..."); 
+  
   return (
                 <div className="p-4 space-y-8 max-w-7xl mx-auto">
                   <section>

@@ -1,5 +1,17 @@
+ export type tasksType = {
+    id: string,
+    title: string,
+    description: string,
+    date: string,
+    priority: string,
+    category: string,
+    isTaskChecked: boolean,
+    settingsClick: boolean,
+    projectId: string,
+    itemId: string,    
+}
 
-type TasksContextType = {
+ export type TasksContextType = {
     showPopup: boolean;
     setShowPopup: (value: boolean | ((prev: boolean) => boolean)) => void;
     setShowTasks: (value: boolean | ((prev: boolean) => boolean)) => void;
@@ -31,17 +43,7 @@ type TasksContextType = {
     activeCategory: string | undefined;
     tasksByCategory: Record<string, tasksType[]>;
     tasksAudio: React.RefObject<HTMLAudioElement | null>;
-}
-
-type tasksType = {
-    id: string,
-    title: string,
-    description: string,
-    date: string,
-    priority: string,
-    category: string,
-    isTaskChecked: boolean,
-    settingsClick: boolean,
-    projectId: string,
-    itemId: string,    
+    setEditingTaskId: (value: string | ((prev: string) => string)) => void;
+    setItemId: (value: string | ((prev: string) => string)) => void;
+    editingTaskId: string;
 }
