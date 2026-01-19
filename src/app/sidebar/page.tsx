@@ -2,7 +2,7 @@
 import { FaRocket, FaHome, FaTasks, FaClock,FaBrain, FaFolderOpen, FaCheckCircle, FaMosque, FaPencilAlt, FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import DarkModeUI from '../darkMode/darkModeUI/page';
-import usePath from './pathLogic/page';
+import {usePath} from './pathLogic/page';
 
 const SideBar = () => {
     const { Active, showSideBar, setShowSideBar } = usePath();

@@ -1,10 +1,12 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-const usePath = () => {
+export const usePath = () => {
     const pathname = usePathname();
-    const [showSideBar,setShowSideBar] = useState(false);
+    const [showSideBar, setShowSideBar] = useState(false);
     const Active = (path: string) => pathname === path;
-    return { Active,showSideBar,setShowSideBar};
+    return { Active, showSideBar, setShowSideBar };
 }
-export default usePath;
+export default function PathLogicPage() {
+    return null;
+}
