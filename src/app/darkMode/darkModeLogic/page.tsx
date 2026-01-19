@@ -1,10 +1,10 @@
 'use client';
 import { useState, useEffect } from "react";
 
-const useDarkMode = () => {
+// 1. قمنا بإضافة كلمة export هنا ليكون تصديراً مسمى (Named Export)
+export const useDarkMode = () => {
     const [darkMode, setDarkMode] = useState(false);
 
-    // أول ما الصفحة تفتح، نحدث الحالة بناءً على اللي متسيف
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "dark") {
@@ -29,5 +29,6 @@ const useDarkMode = () => {
 
     return { handleDarkMode, darkMode };
 };
-
-export default useDarkMode;
+export default function DarkModeLogicPage() {
+    return null;
+}

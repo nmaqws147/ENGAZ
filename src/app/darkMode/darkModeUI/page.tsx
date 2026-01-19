@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
-import useDarkMode from "../darkModeLogic/page";
+import {useDarkMode} from "../darkModeLogic/page";
 
 const DarkModeUI = () => {
     const {handleDarkMode,darkMode} = useDarkMode();
