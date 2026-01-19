@@ -1,6 +1,6 @@
 'use client';
 
-import useCards from "./cardsLogic/page";
+import {useCards} from "./cardsLogic/page";
 import { motion } from "framer-motion";
 
 const CardsUI = () => {
