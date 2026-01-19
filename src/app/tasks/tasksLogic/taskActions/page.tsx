@@ -22,7 +22,7 @@ type TaskState = {
     itemId: string;
 }
 
-export const useTaskActions = (state: TaskState, selectedProjectId: string) => {
+export  function useTaskActions  (state: TaskState, selectedProjectId: string)  {
     const { 
         tasks, setTasks, setTitle, setDescription, setDate, setPriority, 
         setCategory, setEditingTaskId, setShowPopup, setItemId, tasksAudio,

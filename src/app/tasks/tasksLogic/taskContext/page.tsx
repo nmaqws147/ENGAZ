@@ -13,7 +13,7 @@ export const useTasks = (): TasksContextType => {
     return context;
 };
 
-export const TasksProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export default function TasksProvider({ children }: { children: ReactNode }) {
     const { selectedProjectId } = useProjects();
     
     const state = useTaskState();

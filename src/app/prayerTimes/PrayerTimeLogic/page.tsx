@@ -5,7 +5,7 @@ import { FaSun, FaMoon, FaCloudSun } from "react-icons/fa";
 
 const PrayerContext = createContext<PrayerContextType|null>(null);
 
-export const PrayerProvider = ({ children }: { children: ReactNode }) => {
+export default function PrayerProvider ({ children }: { children: ReactNode })  {
   const [prayerTimesData, setPrayerTimesData] = useState<PrayerTimesResponse|null>(null);
   const [timeLeft, setTimeLeft] = useState("");
 

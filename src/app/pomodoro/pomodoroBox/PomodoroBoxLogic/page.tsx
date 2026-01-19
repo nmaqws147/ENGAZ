@@ -10,7 +10,7 @@ const getTime = (totalSeconds: number) => {
   return `${minutes}:${seconds}`;
 };
 
-export const PomodoroProvider = ({ children }: { children: ReactNode }) => {
+export default function PomodoroProvider({ children }: { children: ReactNode }) {
   const pomodoroSound = useRef<HTMLAudioElement | null>(null);
   const pomodoroTimer = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number | null>(null); 

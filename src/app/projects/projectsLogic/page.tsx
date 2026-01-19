@@ -3,7 +3,7 @@ import { createContext, useContext, useState, ReactNode, useEffect } from "react
 
 const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined);
 
-export const ProjectsProvider = ({ children }: { children: ReactNode }) => {
+export default function ProjectsProvider  ({ children }: { children: ReactNode })  {
   const [showProjectsPopup, setShowProjectsPopup] = useState(false);
   const [editingProjectId,setEditingProjectId] = useState("");
   const [onToggle,setOnToggle] = useState(false);

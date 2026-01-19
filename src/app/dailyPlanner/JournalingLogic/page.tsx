@@ -7,7 +7,7 @@ import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
 import { useEditor } from '@tiptap/react';
 const JournalContext = createContext<JournalContextType | undefined>(undefined);
-export const JournalProvider = ({ children }: { children: ReactNode }) => {
+export default function JournalProvider({ children }: { children: ReactNode }) {
     const [mounted, setMounted] = useState(false);
     const [entries, setEntries] = useState<entryType[]>([]);
     useEffect(() => {
