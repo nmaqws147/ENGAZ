@@ -19,7 +19,6 @@ const FocusPage = () => {
                         damping: 15,
                         duration: 0.8 
                     }}
-                    /* التعديل هنا فقط: w-full للموبايل و md:min-w-[500px] للشاشات الكبيرة */
                     className="flex flex-col items-center justify-center bg-linear-to-tr from-[#6366f1] via-[#8b5cf6] to-[#a855f7] rounded-[2.5rem] shadow-[0_20px_50px_rgba(99,102,241,0.3)]  md:min-w-[500px] py-10 px-15 text-white text-center relative overflow-hidden"
                 > 
                     <div className="absolute top-[-10%] left-[-10%] w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none" />

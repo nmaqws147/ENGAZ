@@ -22,7 +22,6 @@ export const JournalProvider = ({ children }: { children: ReactNode }) => {
         }
     }, []);
 
-    // دالة مساعدة للحفظ في الـ LocalStorage مباشرة
     const syncLocalStorage = (data: entryType[]) => {
         localStorage.setItem('journal-entries', JSON.stringify(data));
     };
@@ -42,7 +41,7 @@ export const JournalProvider = ({ children }: { children: ReactNode }) => {
         immediatelyRender: false,
         editorProps: {
             attributes: {
-                class: 'prose prose-slate lg:prose-lg max-w-none focus:outline-none min-h-[500px] p-12 text-slate-700',
+                class: 'prose prose-slate dark:prose-invert lg:prose-lg max-w-none focus:outline-none min-h-[500px] p-12 text-slate-700 dark:text-white',
             },
         },
     });
@@ -70,13 +69,12 @@ export const JournalProvider = ({ children }: { children: ReactNode }) => {
 
     const handleSave = () => {
         const currentContent = editor?.getHTML();
-        // التحقق من أن المحتوى ليس فارغاً
         if (currentContent && currentContent !== '<h2></h2><p></p>') {
             const newEntry: entryType = {
                 id: Date.now(),
                 content: currentContent,
             };       
-            const updatedEntries = [newEntry, ...entries];
+            const updatedEntries = [...entries,newEntry];
             setEntries(updatedEntries);
             syncLocalStorage(updatedEntries);
             editor?.commands.setContent('<h2></h2><p></p>');

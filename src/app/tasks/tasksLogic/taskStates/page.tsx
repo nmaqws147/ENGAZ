@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from "react";
 import { tasksType } from "../../tasksType/page";
 export const useTaskState = () => {

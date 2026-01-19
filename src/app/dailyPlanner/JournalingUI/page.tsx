@@ -16,7 +16,6 @@ const JournalEditor = () => {
                 animate={{ opacity: 1, y: 0 }} 
                 className="max-w-4xl mx-auto"
             >
-                {/* Header Section */}
                 <div className="flex items-center justify-between mb-8">
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }}
@@ -71,7 +70,7 @@ const JournalEditor = () => {
                             </motion.button>
                         ))}
 
-                        <div className="h-5 w-[1px] bg-orange-200 dark:bg-slate-700 mx-2" />
+                        <div className="h-5 w-2 bg-orange-200 dark:bg-slate-700 mx-2" />
 
                         <motion.button 
                             whileHover={{ scale: 1.1 }}
