@@ -1,5 +1,5 @@
 'use client';
-import useChart from './ChartLogic/page';
+import {useChart} from './ChartLogic/page';
 import { useEffect } from 'react';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, 
