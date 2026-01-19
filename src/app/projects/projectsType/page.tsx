@@ -1,4 +1,5 @@
-type ProjectsContextType = {
+// أضفنا export قبل كل type ليتم التعرف عليه في الملفات الأخرى
+export type ProjectsContextType = {
   showProjectsPopup: boolean;
   setShowProjectsPopup: (value: boolean | ((prev: boolean) => boolean)) => void;
   setTitle: (value: string | ((prev: string) => string)) => void;
@@ -16,7 +17,8 @@ type ProjectsContextType = {
   handleEditProject: (projectId: string) => void; 
   handleToggleCheck: (projectId: string) => void; 
 };
-type Project = {
+
+export type Project = {
     id: string;
     title: string;
     desc: string;
@@ -25,9 +27,14 @@ type Project = {
     createdAt: Date;
     settingsClick: boolean;
 }
-type Task = {
+
+export type Task = {
   id: string;
   title: string;
   projectId: string | null;
   completed: boolean;
 };
+
+export default function ProjectsTypePage() {
+    return null;
+}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import SideBar from "./sidebar/page";
 import "./globals.css";
-import { AllProviders } from "./Allproviders/page";
+import  AllProviders  from "./Allproviders/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// الـ Metadata هتشتغل هنا عادي لأن الملف بقى Server Component
 export const metadata: Metadata = {
   title: "ENGAZ",
   description: "Your Ultimate Productivity Hub",

@@ -1,14 +1,13 @@
-
-import React from "react"; // السطر ده هو السر
+import React from "react"; 
 
 type GregorianDate = {
-  date: string; // "09-01-2026"
-  day: string;  // "09"
+  date: string; 
+  day: string;  
   designation: {
-    abbreviated: string; // "AD"
-    expanded: string;    // "Anno Domini"
+    abbreviated: string; 
+    expanded: string;    
   };
-  format: string;        // "DD-MM-YYYY"
+  format: string;        
   lunarSighting: boolean;
   month: {
     number: number;
@@ -22,11 +21,11 @@ type GregorianDate = {
 
 type HijriDate = {
   adjustedHolidays: unknown[];
-  date: string; // "20-07-1447"
+  date: string; 
   day: string;
   designation: {
-    abbreviated: string; // "AH"
-    expanded: string;    // "Anno Hegirae"
+    abbreviated: string; 
+    expanded: string;    
   };
   format: string;
   holidays: unknown[];
@@ -46,8 +45,8 @@ type HijriDate = {
 };
 
 type DateInfo = {
-  readable: string;   // "09 Jan 2026"
-  timestamp: string;  // "1767934800"
+  readable: string;   
+  timestamp: string;  
   gregorian: GregorianDate;
   hijri: HijriDate;
 };
@@ -78,7 +77,7 @@ type Meta = {
   };
   latitudeAdjustmentMethod: string;
   midnightMode: string;
-  offset: Record<string, number>; // Asr, Fajr, etc.
+  offset: Record<string, number>; 
   school: string;
 };
 
@@ -92,11 +91,8 @@ export type PrayerTimesResponse = {
   };
 };
 
-
-
 export type PrayerContextType = {
     prayerTimesData: PrayerTimesResponse | null;
-    // استعملنا React.ReactNode بدل JSX.Element عشان نريح الدماغ
     prayerCards: { name: string; time: string; icon: React.ReactNode }[];
     nextPrayer: { name: string; time: string; icon: React.ReactNode } | null;
     Fajr: string;
@@ -107,4 +103,8 @@ export type PrayerContextType = {
     timeLeft: string;
     setTimeLeft: React.Dispatch<React.SetStateAction<string>>;
     loading: boolean;
+}
+
+export default function PrayerTypePage() {
+    return null;
 }

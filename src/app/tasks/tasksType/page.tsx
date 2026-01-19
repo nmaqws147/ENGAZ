@@ -1,4 +1,4 @@
- export type tasksType = {
+export type tasksType = {
     id: string,
     title: string,
     description: string,
@@ -11,7 +11,7 @@
     itemId: string,    
 }
 
- export type TasksContextType = {
+export type TasksContextType = {
     showPopup: boolean;
     setShowPopup: (value: boolean | ((prev: boolean) => boolean)) => void;
     setShowTasks: (value: boolean | ((prev: boolean) => boolean)) => void;
@@ -46,4 +46,8 @@
     setEditingTaskId: (value: string | ((prev: string) => string)) => void;
     setItemId: (value: string | ((prev: string) => string)) => void;
     editingTaskId: string;
+}
+
+export default function TasksTypePage() {
+    return null;
 }

@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-
+import { type ProjectsContextType,type Project} from "../projectsType/page";
 const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined);
 
 export default function ProjectsProvider  ({ children }: { children: ReactNode })  {

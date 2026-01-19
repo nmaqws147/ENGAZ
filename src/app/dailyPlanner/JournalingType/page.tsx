@@ -1,4 +1,3 @@
-
 import { Editor } from '@tiptap/react';
 
 export type entryType = {
@@ -15,4 +14,8 @@ export type JournalContextType = {
     deleteEntry: (id: number) => void;
     loadEntry: (id: number) => void;
     formatDate: (id: number) => string;
+}
+
+export default function JournalingTypePage() {
+    return null;
 }

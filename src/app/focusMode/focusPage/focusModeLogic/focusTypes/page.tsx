@@ -10,7 +10,12 @@ export type FocusContextType =  {
     formatTime: (total: number) => string;
     weeklyFocusChart: focusChart[];
 }
-export  type focusChart = {
+
+export type focusChart = {
     date: string;
     totalSeconds: number;
+}
+
+export default function FocusTypePage() {
+    return null;
 }
