@@ -7,7 +7,7 @@ import { PomodoroProvider } from "../pomodoro/pomodoroBox/PomodoroBoxLogic/page"
 import { HabitProvider } from "../habitTracker/habitTrackerLogic/habitsStore/page";
 import { FocusProvider } from "../focusMode/focusPage/focusModeLogic/page";
 
-export function AllProviders({ children }: { children: React.ReactNode }) {
+export default function AllProviders({ children }: { children: React.ReactNode }) {
   return (
     <ProjectsProvider>
       <TasksProvider>
