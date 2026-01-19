@@ -1,5 +1,5 @@
 'use client';
-import useIcons from "../habitTrackerLogic/Icons/page";
+import {useIcons} from "../habitTrackerLogic/Icons/page";
 import {useHabit} from "../habitTrackerLogic/habitsStore/page";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";

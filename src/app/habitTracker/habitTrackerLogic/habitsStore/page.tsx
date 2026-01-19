@@ -1,6 +1,7 @@
 'use client';
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
+// ... (نفس التعريفات للـ HabitType والـ HabitContextType بدون تغيير)
 type HabitType = {
     habitTitle: string;
     habitDescription: string;
@@ -31,6 +32,7 @@ interface HabitContextType {
 const HabitContext = createContext<HabitContextType | undefined>(undefined);
 const LOCAL_STORAGE_KEY = 'habits-data';
 
+// 1. تأكد من أن الـ Provider هو Named Export (موجود بالفعل)
 export const HabitProvider = ({ children }: { children: ReactNode }) => {
     const [habits, setHabits] = useState<HabitType[]>([]);
     const [isLoaded, setIsLoaded] = useState(false); 
@@ -39,7 +41,6 @@ export const HabitProvider = ({ children }: { children: ReactNode }) => {
     const [icon, setIcon] = useState('📝');
     const [color, setColor] = useState('#4CAF50');
 
-    // 1. القراءة (تعديل بسيط لفتح القفل)
     useEffect(() => {
         const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
         if (saved) {
@@ -51,6 +52,7 @@ export const HabitProvider = ({ children }: { children: ReactNode }) => {
         }
         setIsLoaded(true); 
     }, []);
+
     useEffect(() => {
         if (isLoaded) {
             localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(habits));
@@ -101,8 +103,12 @@ export const HabitProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
+// 2. الـ Hook هو أيضاً Named Export
 export const useHabit = () => {
     const context = useContext(HabitContext);
     if (!context) throw new Error('useHabitContext must be used within a HabitProvider');
     return context;
 };
+export default function HabitsLogicPage() {
+    return null;
+}
