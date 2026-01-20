@@ -1,4 +1,4 @@
-import { useTasks } from "../../tasksLogic/taskContext/page"
+import { useTasks } from "../../_tasksLogic/taskContext/page"
 
 type TaskSettingsProps = {
     taskId: string;

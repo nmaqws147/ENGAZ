@@ -1,6 +1,6 @@
 
 import PrayerTimesContent from "./prayerTimesContent/page";
-import { PrayerProvider } from "./PrayerTimeLogic/page";
+import  PrayerProvider  from "./PrayerTimeLogic/page";
 const PrayerTimes = () => {
     return (
     <PrayerProvider>

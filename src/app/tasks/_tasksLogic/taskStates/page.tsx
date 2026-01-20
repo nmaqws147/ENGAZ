@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from "react";
-import { tasksType } from "../../tasksType/page";
+import { tasksType } from "../../tasksType/tasksType";
 export const useTaskState = () => {
     const tasksAudio = useRef<HTMLAudioElement | null>(null);
     const [itemId, setItemId] = useState("");

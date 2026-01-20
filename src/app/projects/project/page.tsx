@@ -1,6 +1,6 @@
 'use client';
 import { useProjects } from "../projectsLogic/page";
-import { useTasks } from "@/app/tasks/tasksLogic/taskContext/page";
+import { useTasks } from "@/app/tasks/_tasksLogic/taskContext/page";
 import ProjectSettings from "./ProjectSettings/page";
 
 const Project = () => {

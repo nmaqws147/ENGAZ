@@ -1,7 +1,7 @@
 'use client';
 import FilterByCategoryPage from "./filterByCategory/page";
 import TaskSettings from "./taskSettings/page";
-import { useTasks } from "../tasksLogic/taskContext/page"
+import { useTasks } from "../_tasksLogic/taskContext/page"
 import { motion, AnimatePresence } from "framer-motion";
 const TasksPage = () => {
   const {tasks,showTasks,handleTaskCheck,handleDeleteTask,handleEditTask,handleToggleCheck, moveTask,filteredTasks,} = useTasks();

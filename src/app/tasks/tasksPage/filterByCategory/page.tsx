@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
-import { useTasks } from "../../tasksLogic/taskContext/page"
+import { useTasks } from "../../_tasksLogic/taskContext/page"
 
 const FilterByCategoryPage = () => {
     const {

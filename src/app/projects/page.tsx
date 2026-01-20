@@ -1,8 +1,8 @@
 import EmptyPage from "./emptyPage/page";
 import ProjectsPopup from "./projectsPopup/page";
 import Project from "./project/page";
-import { ProjectsProvider } from "./projectsLogic/page";
-import { TasksProvider } from "@/app/tasks/tasksLogic/taskContext/page";
+import  ProjectsProvider  from "./projectsLogic/page";
+import { TasksProvider } from "@/app/tasks/_tasksLogic/taskContext/page";
 const Projects = () => {
     return (
         <div>

@@ -2,8 +2,8 @@
 import { createContext, useContext, useMemo, ReactNode } from "react";
 import { useProjects } from "@/app/projects/projectsLogic/page";
 import { useTaskState } from "../taskStates/page";
-import { useTaskActions } from "../taskActions/page";
-import { TasksContextType, tasksType } from "../../tasksType/page";
+import  {useTaskActions}  from "../_taskActions/actions";
+import { TasksContextType, tasksType } from "../../tasksType/tasksType";
 
 const TasksContext = createContext<TasksContextType | undefined>(undefined);
 
@@ -13,7 +13,7 @@ export const useTasks = (): TasksContextType => {
     return context;
 };
 
-export default function TasksProvider({ children }: { children: ReactNode }) {
+export  function TasksProvider({ children }: { children: ReactNode }) {
     const { selectedProjectId } = useProjects();
     
     const state = useTaskState();

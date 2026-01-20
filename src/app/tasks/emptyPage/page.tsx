@@ -1,5 +1,5 @@
 'use client'
-import { useTasks } from "../tasksLogic/taskContext/page"
+import { useTasks } from "../_tasksLogic/taskContext/page"
 
 const EmptyPage = () => {
     const { setShowPopup, setShowTasks, tasks} = useTasks();

@@ -1,6 +1,5 @@
 import PomodoroBox from "./pomodoroBox/page";
-import PomodoroSettings from "./pomodoroSettings/page";
-import { PomodoroProvider } from "./pomodoroBox/PomodoroBoxLogic/page";
+import  PomodoroProvider  from "./pomodoroBox/PomodoroBoxLogic/page";
 const Pomodoro = () => {
     return (
         <>

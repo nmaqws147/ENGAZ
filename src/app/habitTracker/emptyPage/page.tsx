@@ -1,16 +1,17 @@
 'use client';
-
+import { useHabit } from "../habitTrackerLogic/habitsStore/page";
+import Habit from "../habit/page";
 type habitPopupProps = {
   setShowHabitPopup: (value: boolean | ((prev: boolean) => boolean)) => void;
   setSubmitClicked?: (value: boolean | ((prev: boolean) => boolean)) => void;
   submitClicked?: boolean;
 }
-
 const EmptyPage = ({ setShowHabitPopup, submitClicked, setSubmitClicked }: habitPopupProps) => {
+  const {habits} = useHabit();
   console.log(submitClicked);
   return (
     <>
-      {submitClicked === false ? (
+      {habits.length === 0 ? (
         <div className="flex flex-col mt-9 ml-9">
           <div className="w-full max-w-4xءl">
             <div className="flex flex-col items-center justify-center py-16 px-6 from-gray-50 to-indigo-50 rounded-2xl shadow-sm border border-gray-100">

@@ -1,6 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from "framer-motion";
-import { useTasks } from "../tasksLogic/taskContext/page"
+import { useTasks } from "../_tasksLogic/taskContext/page"
 import { useProjects } from "@/app/projects/projectsLogic/page";
 
 const TasksPopup = () => {

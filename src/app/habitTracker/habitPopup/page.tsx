@@ -144,7 +144,7 @@ const HabitPopup = ({
       </AnimatePresence>
 
       {/* Habits list */}
-      {submitClicked && habits.length > 0 && (
+      {habits.length > 0 && (
         <>
           <div className="my-5 mx-5">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-1">Habit Tracker</h2>

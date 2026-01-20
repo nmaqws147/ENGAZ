@@ -1,5 +1,5 @@
 'use client';
-import { useTasks } from "@/app/tasks/tasksLogic/taskContext/page";
+import { useTasks } from "@/app/tasks/_tasksLogic/taskContext/page";
 import { motion } from "framer-motion";
 import { FaExclamationCircle, FaFire } from "react-icons/fa";
 

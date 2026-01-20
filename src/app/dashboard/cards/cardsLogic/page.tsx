@@ -1,11 +1,10 @@
 'use client';
-import { useTasks } from "@/app/tasks/tasksLogic/taskContext/page";
+import { useTasks } from "@/app/tasks/_tasksLogic/taskContext/page";
 import { usePomodoro } from "@/app/pomodoro/pomodoroBox/PomodoroBoxLogic/page";
 import { useFocus } from "@/app/focusMode/focusPage/focusModeLogic/page";
 import { useHabit } from "@/app/habitTracker/habitTrackerLogic/habitsStore/page";
 import { FaTasks, FaHourglassHalf, FaFire, FaCheckCircle } from 'react-icons/fa';
 
-// 1. حول الـ Hook إلى Named Export بإضافة كلمة export هنا
 export const useCards = () => {
     const { tasks } = useTasks();
     const { seconds } = useFocus();

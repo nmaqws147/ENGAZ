@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, RefObject } from "react";
-import { tasksType } from "../../tasksType/page";
+import { tasksType } from "../../tasksType/tasksType";
 
 type TaskState = {
     tasks: tasksType[];
