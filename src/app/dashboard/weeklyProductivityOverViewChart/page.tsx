@@ -15,7 +15,7 @@ const ProductiveOverView = () => {
     if (!isMounted) return null;
 
     return (
-        <div className="w-full h-[400px] p-6 bg-[#0f172a]/50 backdrop-blur-3xl rounded-24 border border-white/5 flex flex-col">
+        <div className="w-full h-[400px] p-6 bg-white dark:bg-[#0f172a]/50 backdrop-blur-3xl rounded-24 border border-white/5 flex flex-col">
             <h2 className="text-white mb-8 font-bold text-xl">Productivity Trends</h2>
             <div className="flex-1 w-full">
                 <ResponsiveContainer width="100%" height="100%">
