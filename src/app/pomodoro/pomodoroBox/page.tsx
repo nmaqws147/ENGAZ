@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaPlay, FaPause, FaUndo } from 'react-icons/fa';
 import PomodoroSettings from '../pomodoroSettings/page';
 import { usePomodoro } from './PomodoroBoxLogic/page';
+import { cardType } from './PomodoroBoxLogic/PomodoroBoxType/page';
 
 const PomodoroBox = () => {
   const {

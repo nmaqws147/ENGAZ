@@ -3,8 +3,7 @@ import { createContext, useContext, useMemo, ReactNode } from "react";
 import { useProjects } from "@/app/projects/projectsLogic/page";
 import { useTaskState } from "../taskStates/page";
 import  {useTaskActions}  from "../_taskActions/actions";
-import { TasksContextType, tasksType } from "../../tasksType/tasksType";
-
+import type{ TasksContextType, tasksType } from "../../tasksType/tasksType";
 const TasksContext = createContext<TasksContextType | undefined>(undefined);
 
 export const useTasks = (): TasksContextType => {

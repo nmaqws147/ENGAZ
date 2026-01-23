@@ -1,4 +1,4 @@
-
+'use client';
 import {FaMosque} from "react-icons/fa";
 import { motion } from "framer-motion";
 const Loader = () => {

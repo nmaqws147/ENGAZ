@@ -47,7 +47,3 @@ export type TasksContextType = {
     setItemId: (value: string | ((prev: string) => string)) => void;
     editingTaskId: string;
 }
-
-export default function TasksTypePage() {
-    return null;
-}

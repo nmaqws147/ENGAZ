@@ -6,6 +6,7 @@ import  ProjectsProvider  from "../projects/projectsLogic/page";
 import  PomodoroProvider  from "../pomodoro/pomodoroBox/PomodoroBoxLogic/page";
 import { HabitProvider } from "../habitTracker/habitTrackerLogic/habitsStore/page";
 import { FocusProvider } from "../focusMode/focusPage/focusModeLogic/page";
+import JournalProvider from "../dailyPlanner/JournalingLogic/page";
 
 export default function AllProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +16,9 @@ export default function AllProviders({ children }: { children: React.ReactNode }
           <PomodoroProvider>
             <HabitProvider>
               <FocusProvider>
+                <JournalProvider>
                 {children}
+                </JournalProvider>
               </FocusProvider>
             </HabitProvider>
           </PomodoroProvider>

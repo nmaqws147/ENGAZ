@@ -1,7 +1,6 @@
 'use client';
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-// ... (نفس التعريفات للـ HabitType والـ HabitContextType بدون تغيير)
 type HabitType = {
     habitTitle: string;
     habitDescription: string;

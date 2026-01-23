@@ -1,3 +1,4 @@
+'use client';
 import { useTasks } from "../../_tasksLogic/taskContext/page"
 
 type TaskSettingsProps = {

@@ -1,6 +1,5 @@
 'use client';
 import { useHabit } from "../habitTrackerLogic/habitsStore/page";
-import Habit from "../habit/page";
 type habitPopupProps = {
   setShowHabitPopup: (value: boolean | ((prev: boolean) => boolean)) => void;
   setSubmitClicked?: (value: boolean | ((prev: boolean) => boolean)) => void;

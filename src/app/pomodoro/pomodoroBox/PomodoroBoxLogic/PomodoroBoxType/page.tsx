@@ -1,4 +1,4 @@
-type TimerMode = 'pomodoro' | 'short-break' | 'long-break';
+export type TimerMode = 'pomodoro' | 'short-break' | 'long-break';
 
 export type PomodoroContextType = {
   pomodoroStart: boolean;
@@ -25,11 +25,17 @@ export type PomodoroContextType = {
   sessionsCompleted: number;
   weeklySessionsChart: SessionHistory[];
 }
-
+  
 export type SessionHistory = {
   date: string;
   sessions: number;
 }
+
+export type cardType = {
+  id: number;
+  name: string;
+  role: number | string;
+}[]
 
 export default function PomodoroTypePage() {
     return null;

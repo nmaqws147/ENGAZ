@@ -1,5 +1,6 @@
 'use client';
 import React, { createContext, useContext, useState, useRef, ReactNode, useEffect , useMemo} from "react";
+import { PomodoroContextType , SessionHistory , TimerMode } from "./PomodoroBoxType/page";
 
 const today = new Date().toISOString().split("T")[0];
 const PomodoroContext = createContext<PomodoroContextType | undefined>(undefined);
