@@ -10,8 +10,8 @@ const EmptyPage = () => {
                 <div className="flex flex-col items-center justify-center py-12 md:py-16 px-6 rounded-2xl shadow-sm border dark:border-gray-800 border-gray-100 bg-white dark:bg-gray-900 transition-colors">
 
                     <div className="mb-6 relative">
-                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-linear-to-r from-emerald-100 to-emerald-50 flex items-center justify-center">
-                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-linear-to-r from-emerald-200 to-emerald-100 flex items-center justify-center shadow-inner">
+                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-linear-to-r  flex items-center justify-center">
+                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-linear-to-r  flex items-center justify-center shadow-inner">
                                 <svg
                                     className="w-6 h-6 md:w-8 md:h-8 text-emerald-600"
                                     fill="none"

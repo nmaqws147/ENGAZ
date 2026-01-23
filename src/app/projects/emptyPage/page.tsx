@@ -7,13 +7,12 @@ const ProjectsContainer = () => {
   return (
     <>
       {project.length === 0 ? (
-        /* الحالة الأولى: لو مفيش مشاريع (Empty Page) */
         <div className="flex flex-col mt-9 ml-9">
-          <div className="w-full max-w-4xl">
-            <div className="flex flex-col items-center justify-center py-16 px-6 bg-linear-to-br from-gray-50 to-indigo-50 rounded-2xl shadow-sm border border-gray-100">
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="flex flex-col items-center justify-center py-16 px-6 bg-linear-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-900">
               <div className="mb-6 relative">
-                <div className="w-24 h-24 rounded-full bg-linear-to-br from-blue-100 to-blue-50 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-blue-200 to-blue-100 flex items-center justify-center shadow-inner">
+                <div className="w-24 h-24 rounded-full bg-linear-to-br  flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-linear-to-br flex items-center justify-center shadow-inner">
                     <svg
                       className="w-8 h-8 text-blue-600"
                       fill="none"
@@ -32,10 +31,10 @@ const ProjectsContainer = () => {
                 </div>
               </div>
 
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
                 No Projects yet
               </h2>
-              <p className="text-gray-500 text-center max-w-md mb-10">
+              <p className="text-gray-500 text-center max-w-md mb-10 dark:text-gray-400">
                 Bring your ideas to life by creating your first project. Organize
                 your tasks, collaborate with your team, and turn your vision into
                 reality.

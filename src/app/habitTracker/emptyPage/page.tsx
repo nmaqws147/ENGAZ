@@ -13,7 +13,7 @@ const EmptyPage = ({ setShowHabitPopup, submitClicked, setSubmitClicked }: habit
       {habits.length === 0 ? (
         <div className="flex flex-col mt-9 ml-9">
           <div className="w-full max-w-4xءl">
-            <div className="flex flex-col items-center justify-center py-16 px-6 from-gray-50 to-indigo-50 rounded-2xl shadow-sm border border-gray-100">
+            <div className="flex flex-col items-center justify-center py-16 px-6 from-gray-50 to-indigo-50 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-900">
 
               {/* Icon */}
               <div className="mb-6 relative">
@@ -38,10 +38,10 @@ const EmptyPage = ({ setShowHabitPopup, submitClicked, setSubmitClicked }: habit
               </div>
 
               {/* Text */}
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-2 dark:text-white">
                 No habits yet
               </h2>
-              <p className="text-gray-500 text-center max-w-md mb-10">
+              <p className="text-gray-500 text-center max-w-md mb-10 dark:text-gray-400">
                 Start building your routine by adding your first habit. Track
                 progress, build consistency, and achieve your goals.
               </p>
