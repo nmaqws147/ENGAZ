@@ -208,7 +208,7 @@ export default function PomodoroProvider({ children }: { children: ReactNode }) 
   {
     id: 2, 
     name: 'Long break time', 
-    role: `${sessionsCompleted} out of ${sessionsCompleted === longBreakTime ? setLongBreakTime(prev => prev + 2) : longBreakTime}`,
+    role: `${sessionsCompleted} out of ${sessionsCompleted === longBreakTime ? setLongBreakTime(prev => prev + 4) : longBreakTime}`,
     sessionsCompleted: sessionsCompleted
   },
 ], [sessionsCompleted, longBreakTime]);

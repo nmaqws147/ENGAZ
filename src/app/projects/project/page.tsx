@@ -96,11 +96,11 @@ const Project = () => {
                                 </span>
 
                                 {total === 0 ? (
-                                    <span className="text-xs dark:bg-gray-700  font-medium px-2.5 py-1 rounded-full bg-gray-50 text-gray-400">
+                                    <span className="text-xs dark:bg-gray-900  font-medium px-2.5 py-1 rounded-full bg-gray-50 text-gray-400">
                                         No Tasks
                                     </span>
                                 ) : checked === 0 ? (
-                                    <span className="text-xs dark:bg-gray-700  font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+                                    <span className="text-xs dark:bg-gray-800  font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
                                         todo
                                     </span>
                                 ) : (checked > 0 && checked < total) ? (

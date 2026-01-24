@@ -29,7 +29,7 @@ const TaskSettings: React.FC<TaskSettingsProps> = ({ onDelete, taskId, onEdit, o
                     
                     {/* القائمة المنبثقة */}
                     {task.settingsClick && (
-                        <div className="absolute dark:bg-gray-800 right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200">
+                        <div className="absolute dark:bg-gray-800 right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 dark:border-gray-800">
                             <div className="py-1">
                                 {/* زر التعديل */}
                                 <button 

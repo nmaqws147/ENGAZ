@@ -21,7 +21,17 @@ const TheMostImportantTasks = () => {
         </p>
       </div>
       <div className="flex flex-col gap-3">
-        {highPriorityTasks.length > 0 ? (
+        {tasks.length === 0 ? (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-8 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+            <div className="text-2xl mb-2">📁</div>
+            <p className="text-slate-400 text-xs italic">No tasks created yet</p>
+          </motion.div>
+        ) : highPriorityTasks.length === 0 && tasks.length > 0 ? (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-8 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+            <div className="text-2xl mb-2">✨</div>
+            <p className="text-slate-400 text-xs italic">there is no important tasks now</p>
+          </motion.div>
+        ) : (
           highPriorityTasks.map((task, index) => (
             <motion.div
               key={task.id || index}
@@ -39,8 +49,7 @@ const TheMostImportantTasks = () => {
                   <FaExclamationCircle className="text-lg sm:text-xl" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="text-xs sm:text-sm md:text-base font-bold truncate 
-                    text-slate-800 dark:text-slate-100">
+                  <h4 className="text-xs sm:text-sm md:text-base font-bold truncate text-slate-800 dark:text-slate-100">
                     {task.title}
                   </h4>
                   <div className="mt-1 flex items-center">
@@ -54,19 +63,6 @@ const TheMostImportantTasks = () => {
               </div>
             </motion.div>
           ))
-        ) : (
-          /* Empty State */
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-8 sm:py-12 rounded-2xl border-2 border-dashed 
-              border-slate-200 dark:border-slate-800"
-          >
-            <div className="text-2xl sm:text-3xl mb-2">✨</div>
-            <p className="text-slate-400 dark:text-slate-500 text-xs sm:text-sm font-medium italic px-4">
-              All high-priority tasks are done.
-            </p>
-          </motion.div>
         )}
       </div>
     </section>
